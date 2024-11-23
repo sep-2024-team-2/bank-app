@@ -12,7 +12,10 @@ const sequelize = new Sequelize({
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT),
     ssl: false,
-    //models: [path.join(__dirname, '../models')],
+    models: [path.join(__dirname, '../models')],
+    define: {
+        timestamps: false,
+    },
 });
 
 export default sequelize;
