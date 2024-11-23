@@ -1,10 +1,17 @@
-import { BaseEntity } from "./abstractions/BaseEntity";
-import {AllowNull, BelongsTo, Column, DataType, ForeignKey, Table, Unique} from "sequelize-typescript";
+import {AllowNull, BelongsTo, Column, DataType, ForeignKey, Model, Table, Unique} from "sequelize-typescript";
 import { Role } from "./enums/Role";
 import { Address } from "./Address";
 
 @Table
-export class User extends BaseEntity {
+export class User extends Model {
+    @Column({
+        type: DataType.STRING,
+        defaultValue: DataType.STRING,
+        primaryKey: true,
+        allowNull: false
+    })
+    public readonly id!: string;
+
     @AllowNull(false)
     @Column(DataType.STRING)
     password!: string;

@@ -5,7 +5,7 @@ import { BaseEntity } from "./abstractions/BaseEntity";
 @Table
 export class Company extends BaseEntity {
     @ForeignKey(() => User)
-    @Column(DataType.UUID)
+    @Column(DataType.STRING)
     userId!: string;
 
     @AllowNull(false)

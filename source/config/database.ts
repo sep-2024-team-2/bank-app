@@ -1,6 +1,12 @@
 import { Sequelize } from 'sequelize-typescript';
 import dotenv from 'dotenv';
 import path from 'path';
+import {Account} from "../models/Account";
+import {User} from "../models/User";
+import {Card} from "../models/Card";
+import {Address} from "../models/Address";
+import {Person} from "../models/Person";
+import {Company} from "../models/Company";
 
 dotenv.config();
 
@@ -12,7 +18,7 @@ const sequelize = new Sequelize({
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT),
     ssl: false,
-    models: [path.join(__dirname, '../models')],
+    models: [Account, User, Card, Address, Person, Company],
     define: {
         timestamps: false,
     },

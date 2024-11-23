@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import http from "http";
 import sequelize from "./config/database";
 import { executeSqlScript } from "./utils/executeSqlScript";
+import {Bank} from "./models/Bank";
 
 class App {
     public app: Application;
